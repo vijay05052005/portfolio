@@ -8,46 +8,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    .navbar-nav .nav-item {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
 </head>
 <body style="font-family:'Poppins',sans-serif;">
 <div class="container-fluid bodymaindiv" style="padding: 0%;margin: 0%;">
+<a id="top"></a>
+
+    <!-- Responsive Navbar START -->
 
 
-    <nav class="navbar bg-body-tertiary" style="padding: 0%;"">
-    <div id="navmaindiv"  class="container-fluid">
-    <a id="navbarimgh2" class="navbar-brand" href="#">
-      <!-- <img id="navimg" src="media/photo_2025-08-13_12-15-15.jpg" alt="Logo" width="50" height="54"  class="d-inline-block align-text-top"> -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 0%;">
+  <div id="navmaindiv" class="container-fluid">
+    <a id="navbarimgh2" class="navbar-brand" href="index.html">
+      <!-- <img id="navimg" src="media/photo_2025-08-13_12-15-15.jpg" alt="Logo" width="50" height="54" class="d-inline-block align-text-top"> -->
       <h4 class="navh4">Vijay C</h4>
     </a>
+
     <!-- Toggler / Hamburger -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarMenu" style="margin-right: .5%;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" style="margin-right: .5%;">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Collapsible Menu -->
-    <div class="collapse navbar-collapse navbarMenu">
-
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="align-items: end; padding-right: 1%;">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" href="#">What I Do</a></li> -->
-        <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Client Speak</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
-
-        <ul class="navsubul">
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/twitter-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/instagram-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/fb-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/mail-icon.png"></li></a>
-        </ul>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="padding-right: 1%;align-items:end">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aboutme">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#myskills">My Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#recentwork">RecentWork</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contactme">Contact Me</a></li>
       </ul>
-    
     </div>
-    </div>
-    </nav>
+  </div>
+</nav>
+<!-- Responsive Navbar END -->
+
     
 <!-- ------------------------------------------------------------------- -->
 
@@ -74,16 +81,11 @@
   <!-- <button type="button" class="btn btn-dark vmwbutton">View My Works</button>
   <button type="button" class="btn btn-link">contact me</button> -->
   <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
-  <a href="#contact" class="btn btn-link text-dark smooth-scroll mt-3">Contact Me</a><br><br>
-  <ul class="navsubul">
-        <li><a  href="#"><img src="media/twitter-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/instagram-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/fb-icon.png"></li></a>
-        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/mail-icon.png"></li></a>
-        </ul>
+  <a href="#contactme" class="btn btn-link text-dark smooth-scroll mt-3">Contact Me</a><br><br>
   </div>
 
-    <div class="container profileimgdiv">
+    <div class="container profileimgdiv" style="margin: 0 auto;padding: 0
+    ;">
     <img src="media/photo_2025-08-13_12-15-15.jpg">
     </div>
 
@@ -94,25 +96,28 @@
 <!-- ---------ABOUT ME----------------- -->
 
   <div class="container" style="width: 10%;">
+    <a id="aboutme"></a>
   <h6 style="background-color: #f5df4e; text-align: center;    font-family:'Poppins',sans-serif;
 ">About Me</h6>
+
   </div>
 
   <div class="container-fluid aboutme">
   <h1>Know Me More</h1>
+  
   <br><br><br>
 
 <div class="container-fluid aboutmenameexp1">
 
   <div class="container">
     <h3>Hi,I'm <u>Vijay C</u></h3>
-      <p>I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client’s requirements is our moto.</p>
+      <p> I am from Kozhikode, Kerala, and currently pursuing my studies at Cybersquare, Hitlite Business Park. I have completed my B.Sc. in Computer Science from AWH Special College, Kallai. I am passionate about technology and continuously working on improving my skills in computer science and related fields.<br> Apart from academics, I enjoy reading, watching movies, and listening to music, which help me stay creative and relaxed.</p>
   </div>
 
   <div class="experience">
-    <h1>3</h1>
+    <h1>2</h1>
     <br><br>
-    <h3>Years of experience</h3>
+    <h3>years of experience</h3>
 
   </div>
   
@@ -149,6 +154,8 @@
 
   <div class="container-fluid resumemain1">
   <br><br><br>
+    <a id="resume"></a>
+
 
   <div class="container" style="width: 10%;">
   <h6 style="background-color: #f5df4e; text-align: center;    font-family:'Poppins',sans-serif;
@@ -193,11 +200,11 @@
     <p style="border-bottom: 1px solid rgb(174, 173, 173);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam fugit voluptates maiores neque, ratione, illum deleniti expedita modi dolores perspiciatis necessitatibus dignissimos nemo repellendus laborum enim cumque sapiente rerum natus. <br><br></p>
 
     <h3>Jr.Front End Developer</h3>
-    <p>CyberSquare LTD 2024-2025</p>
+    <p>CyberSquare LTD</p>
     <p style="border-bottom: 1px solid rgb(174, 173, 173);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam fugit voluptates maiores neque, ratione, illum deleniti expedita modi dolores perspiciatis necessitatibus dignissimos nemo repellendus laborum enim cumque sapiente rerum natus. <br><br></p>
 
     <h3>HTML Developer</h3>
-    <p>CyberSquare LTD 2024-2025</p>
+    <p>CyberSquare LTD</p>
     <p style="border-bottom: 1px solid rgb(174, 173, 173);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, officiis. Sed, cupiditate dolor. Quaerat ipsam dolorem obcaecati eligendi quae et. Eos exercitationem rem adipisci animi nostrum suscipit quae nemo vel?<br><br></p>
 
   </div>
@@ -208,10 +215,10 @@
 
 <!-- ----------------------ProgressBar-------------------------- -->
 
-
+<a id="myskills"></a>
   <h1 class="container" style="font-weight: 600;text-align: left;font-family:'Poppins',sans-serif;">My Skills</h1><br><br><br>
-
 <div class="container progressbar1">
+  
 
  <div class="container"> <!-- ----------1----------- -->
 
@@ -257,71 +264,106 @@
 <!-- -------------------recent work------------ -->
 
 <div class="container-fluid recentwork">
-
-<div class="container" style="width: 10%;"><br><br><br>
-  <h6 style="background-color: #f5df4e; text-align: center;font-family:'Poppins',sans-serif;
-  ">Resume</h6>
+<br>
+  <div class="container text-center my-5">
+    <h6 style="background-color: #f5df4e; display: inline-block; padding: 5px 15px; font-family: 'Poppins', sans-serif;">
+      RecentWork
+    </h6>
+      <a id="recentwork"></a>
   </div>
 
-<div class="container">
-        <h1 style="font-weight: 600;text-align: center;font-family:'Poppins',sans-serif;">Some of My Recent Projects</h1><br><br>
-        <br>
-            <!-- <ul>
-                <li>All</li>
-                <li>Photography</li>
-                <li>Nature</li>
-                <li>Adventure</li>
-                <li>Design</li>
-            </ul> -->
-            <div class="row">
-            <div class="col-4">
-                <img src="media/spidermanposter4.jpeg" width="100%" height="35%" style="margin-bottom: 5%;">
-                <img src="media/batmanposter1.jpeg" width="100%" height="75%">
-                <img src="media/Gotham sights_ Bat signal.jpeg" width="100%" height="38.5%" style="margin-top: 5%;">
-
-            </div>
-            <div class="col-4">
-                <img src="media/spidermanposter1.jpeg" width="100%" height="75%" style="margin-bottom: 5%;">
-
-                <img src="media/spiderman poster2.jpeg" width="100%" height="75.2%" >
-            </div>
-            <div class="col-4">
-                <img src="media/batmanposter2.jpeg" width="100%" height="35%" style="margin-bottom: 5%;">
-                <img src="media/jokerposter1.jpeg" width="100%" height="75%">
-                <img src="media/spidermanposter3.jpeg" width="100%" height="38.5%" style="margin-top: 5%;">
-            </div>
-            </div>
+  <div class="container">
+    <h1 class="text-center fw-semibold" style="font-family: 'Poppins', sans-serif;">
+      Some of My Recent Projects
+    </h1>
+    <br><div class="container text-center my-5">
+    <h6 style="background-color: #f5df4e; display: inline-block; padding: 5px 15px; font-family: 'Poppins', sans-serif;">
+      Gallery
+    </h6>
+  </div>
+<br>
+    <div class="row">
+      <div class="col-4">
+        <img src="media/spidermanposter4.jpeg" class="img-fluid mb-3">
+        <img src="media/batmanposter1.jpeg" class="img-fluid mb-3">
+        <img src="media/Gotham sights_ Bat signal.jpeg" class="img-fluid">
+      </div>
+      <div class="col-4">
+        <img src="media/spidermanposter1.jpeg" class="img-fluid mb-3">
+        <img src="media/spiderman poster2.jpeg" class="img-fluid mb-3">
+      </div>
+      <div class="col-4">
+        <img src="media/batmanposter2.jpeg" width="100%" height="13%">
+        <img src="media/jokerposter1.jpeg" class="img-fluid mb-3">
+        <img src="media/spidermanposter3.jpeg"width=100% height="13%">
+      </div>
     </div>
+  </div>
+</div>
+<!-- ----------------------------------contact me--------------------------------- -->
+<div class="container-fluid contactme">
+<br><br><br>
+    <div class="container contactmesub">
+      <div class="container-fluid">
+          <a id="contactme"></a>
+      <h2 class="text-center fw-semibold" style="font-family: 'Poppins', sans-serif;">
+      Let's get in touch
+    </h2>
+    <p>I enjoy discussing new projects and design challenges.Please share as much info,as possible so we can get the most out-of our first catch-up.</p><br>
+    <h6>Living In:</h6>
+    <p>Palazhi,Calicut,Kerala,India.</p>
+    <br>
+    <h6>Call :
+    <p>+91 7736696884</p>
+    </h6>
+    <br>
+  
+    <ul>
+        <li><a  href="#"><img src="media/twitter-icon.png" style="border: 1px ;width: 100%;"></li></a>
+        <li class="navsubul-item"><a class="navsubul-link" href="https://www.instagram.com/vijaayy._/?__pwa=1"><img src="media/instagram-icon.png" style="border: 1px ;width: 100%;"></li></a>
+        <li class="navsubul-item"><a class="navsubul-link" href="#"><img src="media/fb-icon.png"style="border: 1px ;width: 100%;"></li></a>
+        <li class="navsubul-item"><a class="navsubul-link" href="mailto:vijayc8086@gmail.com"><img src="media/mail-icon.png"></li></a>
+  </ul>
+</div>
+
+  <div class="container">
+    <h2 class="text-center fw-semibold">Estimate your Project!</h2>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Name"style="background: transparent;border: 1px solid black;">
+  <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"style="background: transparent;border: 1px solid black;">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">How can I help you!?</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: transparent;border: 1px solid black;"></textarea>
+  <br>
+  <button type="button" class="btn btn-dark">Send &RightArrow;</button>
+
+  </div>
+</div>
+</div>
+<a href="#top"><button type="button" class="btn btn-dark">Goto Top&uparrow;</button></a>
 
 </div>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-
-
-<!-- ------------------FAQ------------------ -->
-
-<div class="container">
-  <h6 style="background-color: #f5df4e; text-align: center;    font-family:'Poppins',sans-serif;
-  ">Resume</h6>
-
-</div>
-
-
-
-
-
-
-
-
-
+<br><br>
+<!-- ----------------foooter=---------- -->
+<div class="footer">
+  <p style="text-align: center;">&copy; 2025 Vijay. All rights reserved.</p>
+    <p style="text-align: center;">
+      <a href="mailto:vijay@example.com">Email</a> |
+      <a href="#aboutme">About</a> |
+      <a href="#contactme">Contact</a>
+    </p>
+  </div>
 
 </div>
 </body>
 </html>
+
+
+<!-- faq questions aavashym indel vekkam -->
+
 <!-- What kind of services do you provide?
 
 A: I offer web development (frontend & backend), basic automation scripts, debugging help, and small-scale software solutions. I also assist with student projects and tech-related consultations.
