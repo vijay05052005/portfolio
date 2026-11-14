@@ -10,16 +10,23 @@
 </head>
 <body>
 
+<!-- Scroll progress -->
+<div id="scrollbar"></div>
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-transparent py-2">
+<nav class="navbar navbar-expand-lg sticky-top py-2" id="mainNav">
   <div class="container">
     <a class="navbar-brand fw-bold text-dark" href="#">Vijay C</a>
-    <div class="ms-auto d-none d-lg-block">
-      <a href="#aboutme" class="nav-link d-inline p-2 text-dark">About Me</a>
-      <a href="#resume" class="nav-link d-inline p-2 text-dark">Resume</a>
-      <a href="#myskills" class="nav-link d-inline p-2 text-dark">My Skills</a>
-      <a href="#recentwork" class="nav-link d-inline p-2 text-dark">RecentWork</a>
-      <a href="#contactme" class="nav-link d-inline p-2 text-dark">Contact Me</a>
+    <button class="navbar-toggler border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#aboutme" class="nav-link text-dark p-2">About Me</a></li>
+        <li class="nav-item"><a href="#resume" class="nav-link text-dark p-2">Resume</a></li>
+        <li class="nav-item"><a href="#myskills" class="nav-link text-dark p-2">My Skills</a></li>
+        <li class="nav-item"><a href="#contactme" class="nav-link text-dark p-2">Contact Me</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -30,9 +37,10 @@
     <div class="col-lg-6 col-12 p-5">
       <h2 class="fw-bold">HI, I'M A</h2>
       <h1 class="fw-bold hero-title">FULL-STACK-DEVELOPER</h1>
-      <p class="mb-3">based in kerala,india</p>
-      <a href="#recentwork" class="btn btn-dark btn-sm me-2">View My Works</a>
-      <a href="#contactme" class="btn btn-link btn-sm text-dark p-0">Contact Me</a>
+      <p class="mb-1">based in kerala,india</p>
+      <p class="mb-3 typed-line">I build <span id="typed" class="fw-semibold"></span><span class="cursor">|</span></p>
+      <a href="#contactme" class="btn btn-dark btn-sm me-2">Get In Touch</a>
+      <a href="#aboutme" class="btn btn-link btn-sm text-dark p-0">About Me</a>
     </div>
     <div class="col-lg-6 col-12 text-center p-4">
       <div class="profileimgdiv">
@@ -76,38 +84,28 @@
     <div class="row">
       <div class="col-lg-6 col-12 mb-4">
         <h1 class="fw-bold">My Education</h1>
-        <div class="mb-3">
+        <div class="mb-3 resume-item">
           <h3>Bachelor in Computer Science</h3>
-          <p>AWH Special college 2022-2025</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+          <p class="resume-meta">AWH Special College &middot; 2022-2025</p>
+          <p>Covered programming fundamentals, databases and web technologies.</p>
         </div>
-        <div class="mb-3">
-          <h3>Computer Science</h3>
-          <p>GBHSS Parayancheri 2021-2022</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
-        </div>
-        <div>
-          <h3>Masters in Computer Science</h3>
-          <p>AWH Special college 2022-2025</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        <div class="mb-3 resume-item">
+          <h3>Higher Secondary - Computer Science</h3>
+          <p class="resume-meta">GBHSS Parayancheri &middot; 2021-2022</p>
+          <p>Completed higher secondary with Computer Science as the core subject.</p>
         </div>
       </div>
       <div class="col-lg-6 col-12 mb-4">
         <h1 class="fw-bold">My Experience</h1>
-        <div class="mb-3">
-          <h3>Sr. Front End Developer</h3>
-          <p>CyberSquare LTD 2025-Current</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
+        <div class="mb-3 resume-item">
+          <h3>Full Stack Development Training</h3>
+          <p class="resume-meta">Cybersquare, Hitlite Business Park &middot; 2025-Present</p>
+          <p>Learning HTML, CSS, JavaScript, Bootstrap and React.js, and building responsive pages and projects along the way.</p>
         </div>
-        <div class="mb-3">
-          <h3>Jr. Front End Developer</h3>
-          <p>CyberSquare LTD</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</p>
-        </div>
-        <div>
-          <h3>HTML Developer</h3>
-          <p>CyberSquare LTD</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        <div class="mb-3 resume-item">
+          <h3>Personal Projects</h3>
+          <p class="resume-meta">Self-driven &middot; Ongoing</p>
+          <p>Built Vijay's Corner, a MERN-stack blog with an admin panel, journal and guestbook, plus standalone vanilla JavaScript apps.</p>
         </div>
       </div>
     </div>
@@ -148,6 +146,9 @@
       </div>
     </div>
   </div>
+  <div class="skill-tags mt-3">
+    <span>Git</span><span>GitHub</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Responsive Design</span>
+  </div>
 </div>
 
 <!-- Contact Section -->
@@ -178,7 +179,8 @@
       <label for="exampleFormControlTextarea1" class="form-label">How can I help you!?</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="background: transparent; border: 1px solid black;"></textarea>
       <br />
-      <button type="button" class="btn btn-dark">Send &RightArrow;</button>
+      <button type="button" class="btn btn-dark" id="sendBtn">Send &RightArrow;</button>
+      <p id="formMsg" class="mt-2 small"></p>
     </div>
   </div>
   <a href="#"><button type="button" class="btn btn-dark">Goto Top &uparrow;</button></a>
@@ -186,21 +188,85 @@
 
 <!-- Footer -->
 <div class="footer">
-  <p class="text-center">&copy; 2025 Vijay. All rights reserved.</p>
+  <p class="text-center">&copy; <span id="year">2025</span> Vijay. All rights reserved.</p>
   <p class="text-center">
-    <a href="mailto:vijay@example.com">Email</a> |
+    <a href="mailto:vijayc8086@gmail.com">Email</a> |
     <a href="#aboutme">About</a> |
     <a href="#contactme">Contact</a>
   </p>
 </div>
 
+<button id="toTop" aria-label="Back to top">&uarr;</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script>
 (function () {
+  var $ = function (s) { return document.querySelector(s); };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Footer year
+  $('#year').textContent = new Date().getFullYear();
+
+  // Navbar background, scroll progress, back-to-top, active link
+  var nav = $('#mainNav'), bar = $('#scrollbar'), toTop = $('#toTop');
+  var links = document.querySelectorAll('#navLinks .nav-link');
+  var ids = ['aboutme', 'resume', 'myskills', 'contactme'];
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    nav.classList.toggle('scrolled', y > 40);
+    toTop.classList.toggle('show', y > 500);
+    var current = '';
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 140) current = id;
+    });
+    links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0 }); });
+
+  // Close mobile menu after tapping a link
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      var c = $('#navLinks');
+      if (c.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(c).hide();
+    });
+  });
+
+  // Contact form: opens the visitor's email app with the message filled in
+  $('#sendBtn').addEventListener('click', function () {
+    var name = $('#exampleFormControlInput1').value.trim();
+    var email = $('#exampleFormControlInput2').value.trim();
+    var msg = $('#exampleFormControlTextarea1').value.trim();
+    var out = $('#formMsg');
+    if (!name || !email || !msg) { out.textContent = 'Please fill in your name, email and message.'; return; }
+    if (!/^\S+@\S+\.\S+$/.test(email)) { out.textContent = 'Please enter a valid email address.'; return; }
+    out.textContent = 'Opening your email app...';
+    window.location.href = 'mailto:vijayc8086@gmail.com?subject=' +
+      encodeURIComponent('Portfolio enquiry from ' + name) +
+      '&body=' + encodeURIComponent(msg + '\n\n' + name + '\n' + email);
+  });
+
+  // Typing effect in the hero
+  var words = ['responsive websites', 'React.js apps', 'MERN stack projects'];
+  var t = $('#typed');
+  if (reduce) { t.textContent = words[0]; } else {
+    var w = 0, c = 0, del = false;
+    (function tick() {
+      var word = words[w];
+      t.textContent = word.slice(0, c);
+      if (!del && c === word.length) { del = true; return setTimeout(tick, 1500); }
+      if (del && c === 0) { del = false; w = (w + 1) % words.length; }
+      c += del ? -1 : 1;
+      setTimeout(tick, del ? 40 : 80);
+    })();
+  }
+
   if (reduce || !('IntersectionObserver' in window)) return;
 
-  // Mark elements to reveal on scroll
+  // Scroll reveal
   var targets = [
     ['#aboutme .about-label, #aboutme > h2', ''],
     ['#aboutme .col-lg-8', 'from-left'],
@@ -211,26 +277,26 @@
     ['#resume .col-lg-6:last-child > div', 'from-right'],
     ['#myskills + h1', ''],
     ['.progressbar1 .col-sm-6', ''],
+    ['.skill-tags span', ''],
     ['.contactmesub', 'from-left'],
     ['.contactme > .container:nth-child(2)', 'from-right'],
     ['.footer', '']
   ];
-  targets.forEach(function (t) {
-    document.querySelectorAll(t[0]).forEach(function (el, i) {
+  targets.forEach(function (tg) {
+    document.querySelectorAll(tg[0]).forEach(function (el, i) {
       el.classList.add('reveal');
-      if (t[1]) el.classList.add(t[1]);
+      if (tg[1]) el.classList.add(tg[1]);
       el.style.transitionDelay = (i * 90) + 'ms';
     });
   });
 
-  // Skill bars: start at 0, fill when visible
-  var bars = document.querySelectorAll('.progress-bar');
-  bars.forEach(function (b) {
-    b.dataset.w = b.style.width;
-    b.style.width = '0';
+  // Skill bars fill when visible
+  document.querySelectorAll('.progress-bar').forEach(function (b) {
+    b.dataset.w = b.style.width; b.style.width = '0';
   });
 
   // Count-up for the experience number
+  var counted = false;
   function countUp(el) {
     var end = parseInt(el.textContent, 10), n = 0;
     el.textContent = '0';
@@ -239,7 +305,6 @@
       if (n >= end) clearInterval(timer);
     }, 450);
   }
-  var counted = false;
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
@@ -252,7 +317,6 @@
       io.unobserve(el);
     });
   }, { threshold: 0.15 });
-
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 })();
 </script>
