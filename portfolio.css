@@ -80,3 +80,89 @@ body {
     font-size: 1.3rem;
   }
 }
+
+/* ===================== ANIMATIONS ===================== */
+html { scroll-behavior: smooth; }
+
+/* Hero: one orchestrated entrance on page load */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes ringPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,0,0,.18), 0 0 16px rgba(0,0,0,.09); }
+  100% { box-shadow: 0 0 0 26px rgba(0,0,0,0), 0 0 16px rgba(0,0,0,.09); }
+}
+
+.hero-section .col-lg-6:first-child > * {
+  opacity: 0;
+  animation: riseIn .7s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.hero-section h2        { animation-delay: .10s !important; }
+.hero-section .hero-title { animation-delay: .25s !important; }
+.hero-section p         { animation-delay: .40s !important; }
+.hero-section .btn      { animation-delay: .55s !important; }
+
+.profileimgdiv {
+  opacity: 0;
+  animation: popIn .8s cubic-bezier(.2,.7,.2,1) .3s forwards;
+}
+.profile-img {
+  animation: floaty 5s ease-in-out 1.2s infinite, ringPulse 2.6s ease-out 1.2s infinite;
+}
+
+/* Navbar */
+.navbar { animation: riseIn .6s ease both; }
+.navbar .nav-link { position: relative; transition: color .2s; }
+.navbar .nav-link::after {
+  content: ""; position: absolute; left: 8px; right: 8px; bottom: 2px;
+  height: 2px; background: #222;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s ease;
+}
+.navbar .nav-link:hover::after { transform: scaleX(1); }
+
+/* Buttons */
+.btn { transition: transform .2s ease, box-shadow .2s ease; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.18); }
+.btn:active { transform: translateY(0); }
+
+/* Scroll reveal (classes added by animations.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.from-left  { transform: translateX(-40px); }
+.reveal.from-right { transform: translateX(40px); }
+.reveal.in-view    { opacity: 1; transform: none; }
+
+/* Skills bars fill when visible */
+.progress-bar { transition: width 1.3s cubic-bezier(.2,.7,.2,1); }
+
+/* Experience circle */
+.exp-circle { transition: transform .3s ease; }
+.exp-circle:hover { transform: scale(1.08) rotate(-4deg); }
+
+/* Contact icons */
+.contactme .list-inline-item img { transition: transform .25s ease; }
+.contactme .list-inline-item a:hover img { transform: translateY(-4px) scale(1.12); }
+
+/* Form focus */
+.contactme .form-control { transition: box-shadow .25s ease, transform .25s ease; }
+.contactme .form-control:focus { box-shadow: 0 0 0 .2rem rgba(245,223,78,.6); transform: translateY(-1px); }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .hero-section .col-lg-6:first-child > *, .profileimgdiv { opacity: 1 !important; transform: none !important; }
+}

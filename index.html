@@ -181,7 +181,7 @@
       <button type="button" class="btn btn-dark">Send &RightArrow;</button>
     </div>
   </div>
-  <a href="#top"><button type="button" class="btn btn-dark">Goto Top &uparrow;</button></a>
+  <a href="#"><button type="button" class="btn btn-dark">Goto Top &uparrow;</button></a>
 </div>
 
 <!-- Footer -->
@@ -195,5 +195,66 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  // Mark elements to reveal on scroll
+  var targets = [
+    ['#aboutme .about-label, #aboutme > h2', ''],
+    ['#aboutme .col-lg-8', 'from-left'],
+    ['#aboutme .col-lg-4', 'from-right'],
+    ['#aboutme .row.mt-4 > div', ''],
+    ['#resume h6, #resume > h1', ''],
+    ['#resume .col-lg-6:first-child > div', 'from-left'],
+    ['#resume .col-lg-6:last-child > div', 'from-right'],
+    ['#myskills + h1', ''],
+    ['.progressbar1 .col-sm-6', ''],
+    ['.contactmesub', 'from-left'],
+    ['.contactme > .container:nth-child(2)', 'from-right'],
+    ['.footer', '']
+  ];
+  targets.forEach(function (t) {
+    document.querySelectorAll(t[0]).forEach(function (el, i) {
+      el.classList.add('reveal');
+      if (t[1]) el.classList.add(t[1]);
+      el.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+
+  // Skill bars: start at 0, fill when visible
+  var bars = document.querySelectorAll('.progress-bar');
+  bars.forEach(function (b) {
+    b.dataset.w = b.style.width;
+    b.style.width = '0';
+  });
+
+  // Count-up for the experience number
+  function countUp(el) {
+    var end = parseInt(el.textContent, 10), n = 0;
+    el.textContent = '0';
+    var timer = setInterval(function () {
+      n++; el.textContent = n;
+      if (n >= end) clearInterval(timer);
+    }, 450);
+  }
+  var counted = false;
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      el.classList.add('in-view');
+      el.querySelectorAll('.progress-bar').forEach(function (b) { b.style.width = b.dataset.w; });
+      var num = el.querySelector('.exp-circle h1');
+      if (num && !counted) { counted = true; countUp(num); }
+      io.unobserve(el);
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>
